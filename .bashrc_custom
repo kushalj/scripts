@@ -1,0 +1,49 @@
+name='kfe'
+project='kfecom'
+
+cd /vagrant/$project
+alias $name-v='source ~/$name-venv/bin/activate'
+
+wsgi='.wsgi:application'
+green=$project$wsgi
+
+# sh stuff
+alias ll='ls -alrth'
+
+# Django stuff
+alias cs='python manage.py collectstatic'
+
+# git and deployment
+alias gitc='git commit -m $1'
+alias dr='source ./scripts/deploy.sh'
+alias dl='source ./scripts/local.sh $1'
+alias dlg='gunicorn --log-level debug -b [::]:8000 $green'
+
+# db dump and restore
+alias dump='sh ./scripts/dump_$project.sh $1'
+alias restore='sh ./scripts/restore_$project.sh $1'
+
+# south migration shortcuts
+alias mschi='python ./manage.py schemamigration --initial'
+alias msch='python ./manage.py schemamigration --auto $1 $2'
+alias mupd='python ./manage.py schemamigration --auto --update $1 $2'
+alias mdam='python ./manage.py datamigration $1 $2'
+alias mmig='python ./manage.py migrate $1 $2'
+
+# heroku
+alias hrestore='heroku pgbackups:restore DATABASE $1 $2 $3'
+alias hdump='sh ./scripts/heroku_dump.sh $1'
+alias hreset='heroku pg:reset DATABASE $1 $2'
+
+alias lmail='python -m smtpd -n -c DebuggingServer localhost:1025'
+
+# bash stuff
+alias cpbashp='cp ./scripts/.bash_profile ~/'
+alias bashp='source ~/.bash_profile'
+alias vbashp='vim scripts/.bash_profile'
+
+source ~/.bashrc
+
+# echo 'activating virtualenv'
+# kfe-v
+
