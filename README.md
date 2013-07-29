@@ -3,11 +3,44 @@
 
 These scripts will add automation, one stroke deployment, backup up of the database etc..
 
-I will document them soon :)
 
 
-#TODO setup.sh needs to take #name #extension and put them into the project files 
+This first needs:
+
+sudo apt-get install git-core
 
 
 
+
+SETUP PROJECT (only run this once !!!)
+
+./setup-project.sh {project name} {project extension} 
+
+e.g:
+./setup-project kfe com
+
+this will:
+   1. create name=kfe and project=kfecom variables
+   2. copy .bashrc_custom to $HOME (for later calling)
+   3. install Heroku toolbelt
+
+
+
+
+SETUP NODE
+
+./setup-node.sh
+
+This:
+	1. pulls in environment for node, nvm, emacs, (see https://github.com/kushalj/setup-node)
+
+
+
+GIT MIRROR
+
+./git_mirror.sh username1 original_name mirror_name (both without .git extensions)
+
+This:
+	1. makes a duplicate --bare repo and uploads to "mirror_name" (which must exist on username1's Github.com)
+	2. deletes the --bare repos and downloads a regular clone of the new repo
 
