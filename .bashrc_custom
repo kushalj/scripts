@@ -36,8 +36,22 @@ alias mmig='python ./manage.py migrate $1 $2'
 # git and deployment
 alias gitc='git commit -m $1'
 alias gitpo='git push origin master'
+
+alias gitcd="git checkout develop"
+alias gitpd="git push origin develop"
+
+alias gitcs="git checkout staging"
+alias gitps="git push staging-heroku staging:master"
+
+alias gitcp="git checkout master"
+alias gitpp="git push production-heroku master:master"
+
 alias dr='source $HOME/scripts/deploy.sh'
 alias dl='source $HOME/scripts/local.sh $1'
+
+
+
+
 
 
 # postgres database "pdb" dump and restore

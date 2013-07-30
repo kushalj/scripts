@@ -1,3 +1,4 @@
+#!/bin/bash
 # $1 is username
 # Needs $2 .git and $3.git to exist
 git clone --bare https://github.com/$1/$2.git
