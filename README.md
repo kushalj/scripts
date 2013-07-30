@@ -166,13 +166,15 @@ gitc = 'git commit -m $1'
 gitpo = 'git push origin master'                                                                                                                                   
                                                                                                                                                                        
 gitcd = "git checkout develop"                                                                                                                                     
-gitpd = "git push origin develop"                                                                                                                                  
+gitpod = "git push origin develop"                                                                                                                                  
                                                                                                                                                                        
 gitcs = "git checkout staging"                                                                                                                                     
-gitps = "git push staging-heroku staging:master"                                                                                                                   
+gitpos = "git push origin staging" 
+gitphs = "git push staging-heroku staging:master"                                                                                                                   
                                                                                                                                                                        
 gitcp = "git checkout master"                                                                                                                                      
-gitpp = "git push production-heroku master:master" 
+gitpop = "git push origin staging" 
+gitphp = "git push production-heroku master:master" 
 
 
 vbashp = edit ../scripts/.bashrc_custom with vi
@@ -182,6 +184,9 @@ bashp = run .bashrc_custom
 dl = deploy project locally (on current server)
 dr = deploy project remotely (staging or wherever defined)
 
+e.g. I often set dr to merge develop to staging, staging to master and push staging and master all out
+
+Yes, I know. It's only for emergency use. Promise.
 
 
 
