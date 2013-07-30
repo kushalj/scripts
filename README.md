@@ -86,8 +86,6 @@ Production is created on Heroku
 
 
 
-
-
 # Git Remote to SSH
 
 ./git_remote_to_ssh {remote name} {username} {repo}
@@ -154,6 +152,71 @@ uses pg_dump and pg_restore
 downloads a dump of the postgres db on heroku
 
 (this needs work for multi-branch projects)
+
+
+
+# .bashrc_custom
+
+Gives the following commands:
+
+(usable after setup-branches.sh)
+
+
+gitc = 'git commit -m $1'                                                                                                                                          
+gitpo = 'git push origin master'                                                                                                                                   
+                                                                                                                                                                       
+gitcd = "git checkout develop"                                                                                                                                     
+gitpd = "git push origin develop"                                                                                                                                  
+                                                                                                                                                                       
+gitcs = "git checkout staging"                                                                                                                                     
+gitps = "git push staging-heroku staging:master"                                                                                                                   
+                                                                                                                                                                       
+gitcp = "git checkout master"                                                                                                                                      
+gitpp = "git push production-heroku master:master" 
+
+
+vbashp = edit ../scripts/.bashrc_custom with vi
+cpbashp = copy .bashrc_custom to $HOME
+bashp = run .bashrc_custom
+
+dl = deploy project locally (on current server)
+dr = deploy project remotely (staging or wherever defined)
+
+
+
+
+
+# Example
+
+My usual process is to setup up EC2 instance and sudo apt-get install git-core
+
+
+Then I clone in (from $HOME):
+
+git clone https://github.com/kushalj/scripts.git
+
+cd $HOME/scripts
+./setup-node.sh
+
+cd $HOME/scripts
+./setup-project.sh "mv" "org"
+
+
+exit the ec2 instance and log back in - this fires up bash scripts
+
+
+cd $HOME/scripts
+./git_setup.sh "git_username" "my@email.address"
+
+
+./add_path.sh (Optional)
+
+cd $HOME
+./scripts/git_mirror.sh "git_username" "old_repo" "new_empty_repo_at_github" (optional if you want to copy an older project)
+
+
+cd $HOME/your_project
+../scripts/git_branches.sh
 
 
 
