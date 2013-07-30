@@ -12,7 +12,7 @@ This first needs:
 sudo apt-get install git-core
 
 
-SETUP NODE
+# Setup node.js Environment
 
 ./setup-node.sh
 
@@ -22,7 +22,7 @@ This:
 
 
 
-GIT SETUP
+# Setup Git
 
 ./git_setup.sh "Name surname" "email@address.com"
  
@@ -34,7 +34,11 @@ This:
 
 
 
-SETUP PROJECT (only run this once !!!)
+# Setup Project (only run this once !!!)
+
+Naming convention:
+This may not make sense initially but it follows a structured naming convention that a project name is made up of some name initials e.g. 'mv' for Moveville and an extension, e.g. 'org' for .org. The Project name is then $name$extension or in this case 'mvorg' which is used all over the place for uniformity on each project
+
 
 ./setup-project.sh {project name} {project extension} 
 
@@ -42,18 +46,114 @@ e.g:
 ./setup-project kfe com
 
 this will:
-   1. create name=kfe and project=kfecom variables
+   1. create name=kfe and project=kfecom variables (PROJECT_NAME.txt and PROJECT_EXT.txt)
    2. copy .bashrc_custom to $HOME (for later calling)
    3. install Heroku toolbelt
 
 
 
 
-GIT MIRROR
+# Git Mirror 
+
+This scripts duplicates/mirrors a repo into a separate,  empty Github repo
 
 ./git_mirror.sh username1 original_name mirror_name (both without .git extensions)
 
 This:
    1. makes a duplicate --bare repo and uploads to "mirror_name" (which must exist on username1's Github.com)
    2. deletes the --bare repos and downloads a regular clone of the new repo
+
+
+
+
+
+# Setup Branches for  Git Project
+
+Uses the schema: Dev + Staging + Production, where Production is the master
+
+Dev is running locally on the Ubuntu/EC2 server
+
+Staging is created on Heroku
+
+Production is created on Heroku
+
+./setup_branches.sh (uses PROJECT_NAME.txt)
+
+(Again, ONLY RUN IT ONCE!!)
+
+
+
+
+
+
+
+
+# Git Remote to SSH
+
+./git_remote_to_ssh {remote name} {username} {repo}
+
+switch default https:// repo to an ssh remote
+
+e.g. ./git_remote_to_ssh origin kushalj scripts
+
+This means I don't have to keep entering the damn password to git push... :)
+
+
+
+
+# Add Path
+
+./add_path.sh 
+
+In case you need to add a global path to scripts
+
+
+
+
+# Deploy.sh
+
+TODO
+
+
+
+# local.sh
+
+a place for local tidying before local deploy by localpy or localjs
+
+
+
+# localpy.sh and localjs.sh
+
+call local.sh and run relevant py or js development servers for the project
+
+
+
+
+# init_postgres
+
+TODO
+
+
+
+
+# dump_pdb.sh and restore_pdb.sh
+
+./dump_pdb {file} dumps the project's postgres db to {file}.dump
+
+./restore_pdb (file} deletes the project database and restores it from {file}.dump
+
+uses pg_dump and pg_restore
+
+
+
+
+# Dump Heroku Postgres DB
+
+./heroku_dump.sh
+
+downloads a dump of the postgres db on heroku
+
+(this needs work for multi-branch projects)
+
+
 
