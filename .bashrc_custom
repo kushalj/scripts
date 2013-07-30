@@ -35,6 +35,7 @@ alias mmig='python ./manage.py migrate $1 $2'
 
 # git and deployment
 alias gitc='git commit -m $1'
+alias gitpo='git push origin master'
 alias dr='source $HOME/scripts/deploy.sh'
 alias dl='source $HOME/scripts/local.sh $1'
 
