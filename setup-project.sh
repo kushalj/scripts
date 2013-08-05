@@ -1,6 +1,6 @@
 #!/bin/bash
-echo $1 > PROJECT_NAME.txt
-echo $2 > PROJECT_EXT.txt
+echo $1 > $HOME/scripts/PROJECT_NAME.txt
+echo $2 > $HOME/scripts/PROJECT_EXT.txt
 
 name=$(cat $HOME/scripts/PROJECT_NAME.txt)
 extension=$(cat $HOME/scripts/PROJECT_EXT.txt)
