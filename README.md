@@ -211,17 +211,17 @@ exit the ec2 instance and log back in - this fires up bash scripts
 
 
 cd $HOME/scripts
-./git_setup.sh "git_username" "my@email.address"
+./git-setup.sh "git_username" "my@email.address"
 
 
 ./add_path.sh (Optional)
 
 cd $HOME
-./scripts/git_mirror.sh "git_username" "old_repo" "new_empty_repo_at_github" (optional if you want to copy an older project)
+./scripts/git-mirror.sh "git_username" "old_repo" "new_empty_repo_at_github" (optional if you want to copy an older project)
 
 
 cd $HOME/your_project
-../scripts/git_branches.sh
+../scripts/git-branches.sh
 
 
 
