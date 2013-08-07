@@ -58,8 +58,8 @@ alias gitms="git merge staging"
 alias gitpop="git push origin master"
 alias gitphp="git push production-heroku master:master"
 
-
-
+alias gitpoa="source $HOME/scripts/git-push-origin-all.sh"
+alias gitpha="source $HOME/scripts/git-push-heroku-all.sh"
 
 # app deployment
 alias dr='source $HOME/scripts/deploy.sh'
@@ -93,7 +93,7 @@ alias vbashp='vim $HOME/scripts/$bcustom'
 alias embashp='emacs -nw $HOME/scripts/$bcustom'
 alias vbashl='cat $HOME/$bcustom | less'
 
-
+alias cdsc="cd $HOME/scripts"
 
 
 
