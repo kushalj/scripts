@@ -35,19 +35,33 @@ alias mmig='python ./manage.py migrate $1 $2'
 
 # git and deployment
 alias gitc='git commit -m $1'
-alias gitpo='git push origin master'
+alias gitca='git commit -am $1'
+alias gits='git status'
 
+alias gitpom='git push origin master'
+
+# git develop
 alias gitcd="git checkout develop"
 alias gitpod="git push origin develop"
 
+#git gitstaging
 alias gitcs="git checkout staging"
+alias gitmd="git merge develop"
+
 alias gitpos="git push origin staging"
 alias gitphs="git push staging-heroku staging:master"
 
+#git production
 alias gitcp="git checkout master"
+alias gitms="git merge staging"
+
 alias gitpop="git push origin master"
 alias gitphp="git push production-heroku master:master"
 
+
+
+
+# app deployment
 alias dr='source $HOME/scripts/deploy.sh'
 alias dl='source $HOME/scripts/local.sh $1'
 
@@ -70,11 +84,16 @@ alias hreset='heroku pg:reset DATABASE $1 $2'
 
 
 
+bcustom=".bashrc_custom"
 
 # bash stuff
-alias cpbashp='cp $HOME/scripts/.bashrc_custom $HOME/'
-alias bashp='source $HOME/.bashrc_custom'
-alias vbashp='vim $HOME/scripts/.bashrc_custom'
+alias cpbashp='cp $HOME/scripts/$bcustom $HOME/'
+alias bashp='source $HOME/$bcustom'
+alias vbashp='vim $HOME/scripts/$bcustom'
+alias embashp='emacs -nw $HOME/scripts/$bcustom'
+alias vbashl='cat $HOME/$bcustom | less'
+
+
 
 
 
