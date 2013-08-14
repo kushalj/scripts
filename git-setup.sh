@@ -8,5 +8,6 @@ git config --global credential.helper 'cache --timeout=3600'
 
 ssh-keygen -t rsa -C $2
 cat ~/.ssh/id_rsa.pub
+echo ""
 
 
