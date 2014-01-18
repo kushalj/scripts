@@ -11,7 +11,7 @@ This first needs:
 
 requires git-core
 
-```
+```bash
 e.g. sudo apt-get install git-core
 ```
 
