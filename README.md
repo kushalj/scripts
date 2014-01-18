@@ -11,8 +11,9 @@ This first needs:
 
 requires git-core
 
+e.g:
 ```bash
-e.g. sudo apt-get install git-core
+sudo apt-get install git-core
 ```
 
 # Setup node.js Environment
