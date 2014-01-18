@@ -1,19 +1,20 @@
 # Bash Scripts for Development Automation
 
 !!! file PROJECT_NAME.txt contains project name for script references e.g. 'kfe' (without the quotes)
+
 !!! file PROJECT_EXT.txt contains the project extension. So if the extended name is kfecom, this file contains 'com' without quotes.
 
-These scripts will add automation, one stroke deployment, backup up of the database etc..
-
+These scripts aim to add automation, one stroke deployment, backup up of the database etc..
 
 
 This first needs:
 
-sudo apt-get install git-core
-
+requires git-core
+'''bash
+e.g. sudo apt-get install git-core
+'''
 
 # Setup node.js Environment
-
 ./setup-node.sh
 
 This:
