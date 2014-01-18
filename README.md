@@ -17,8 +17,9 @@ sudo apt-get install git-core
 ```
 
 # Setup node.js Environment
+```shell
 ./setup-node.sh
-
+```
 This:
    1. pulls in environment for node, nvm, emacs, (see https://github.com/kushalj/setup-node)
 
