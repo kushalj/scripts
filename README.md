@@ -10,9 +10,10 @@ These scripts aim to add automation, one stroke deployment, backup up of the dat
 This first needs:
 
 requires git-core
-'''
+
+```
 e.g. sudo apt-get install git-core
-'''
+```
 
 # Setup node.js Environment
 ./setup-node.sh
