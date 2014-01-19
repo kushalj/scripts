@@ -60,8 +60,10 @@ this will:
 
 This scripts duplicates/mirrors a repo into a separate,  empty Github repo
 ```bash
-./git_mirror.sh username1 original_name mirror_name (both without .git extensions)
+./git_mirror.sh username1 original_name mirror_name
 ```
+(both without .git extensions)
+
 This:
    1. makes a duplicate --bare repo and uploads to "mirror_name" (which must exist on username1's Github.com)
    2. deletes the --bare repos and downloads a regular clone of the new repo
@@ -136,11 +138,16 @@ TODO
 
 # dump_pdb.sh and restore_pdb.sh
 ```bash
-./dump_pdb {file} dumps the project's postgres db to {file}.dump
+./dump_pdb {file} 
 ```
+dumps the project's postgres db to {file}.dump
+
+
 ```bash
-./restore_pdb (file} deletes the project database and restores it from {file}.dump
+./restore_pdb (file}
 ```
+deletes the project database and restores it from {file}.dump
+
 uses pg_dump and pg_restore
 
 
@@ -170,19 +177,26 @@ Gives the following commands:
 `gitpod` = `git push origin develop`                                                                                                                                  
                                                                                                                                                                        
 `gitcs` = `git checkout staging`                                                                                                                                     
-`gitpos` = `git push origin staging` 
+`gitpos` = `git push origin staging`
+
 `gitphs` = `git push staging-heroku staging:master`                                                                                                                   
                                                                                                                                                                        
 `gitcp` = `git checkout master`                                                                                                                                      
 `gitpop` = `git push origin staging` 
+
 `gitphp` = `git push production-heroku master:master` 
 
 
 `vbashp` = edit ../scripts/.bashrc_custom with vi
+
 `cpbashp` = copy .bashrc_custom to $HOME
+
 `bashp` = run .bashrc_custom
 
+
+
 `dl` = deploy project locally (on current server)
+
 `dr` = deploy project remotely (staging or wherever defined)
 
 e.g. I often set dr to merge develop to staging, staging to master and push staging and master all out
