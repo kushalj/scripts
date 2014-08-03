@@ -1,5 +1,7 @@
 # Bash Scripts for Development Automation
 
+!!! I generally only use ```./setup.sh``` for creating dev scripts. The rest is 'alpha'-stage project management rubbish. 
+
 !!! file PROJECT_NAME.txt contains project name for script references e.g. 'kfe' (without the quotes)
 
 !!! file PROJECT_EXT.txt contains the project extension. So if the extended name is kfecom, this file contains 'com' without quotes.
@@ -7,24 +9,27 @@
 These scripts aim to add automation, one stroke deployment, backup up of the database etc..
 
 
-This first needs:
+Linux script:
 
-requires git-core
-
-e.g:
 ```bash
-sudo apt-get install git-core
+
+    cd ~ 
+    git clone https://github.com/kushalj/scripts
+    cd scripts
+    ./setup.sh
+
 ```
 
-# Setup node.js Environment
-```bash
-./setup-node.sh
-```
+
+# Components
+
+
+## Setup Node and node environment
 This:
    1. pulls in environment for node, nvm, emacs, (see https://github.com/kushalj/setup-node)
 
 
-# Setup Git
+## Setup Git
 ```bash
 ./git_setup.sh "Name surname" "email@address.com"
 ```
@@ -35,8 +40,8 @@ This:
 
 
 
-
-# Setup Project (only run this once !!!)
+!!! 'Setup Project' is experimental shit. Don't run it unless you are build a dev server with just one project.
+## Setup Project (only run this once !!!)
 
 Naming convention:
 This may not make sense initially but it follows a structured naming convention that a project name is made up of some name initials e.g. 'mv' for Moveville and an extension, e.g. 'org' for .org. The Project name is then $name$extension or in this case 'mvorg' which is used all over the place for uniformity on each project
@@ -56,7 +61,7 @@ this will:
 
 
 
-# Git Mirror 
+## Git Mirror 
 
 This scripts duplicates/mirrors a repo into a separate,  empty Github repo
 ```bash
@@ -72,7 +77,7 @@ This:
 
 
 
-# Setup Branches for  Git Project
+## Setup Branches for  Git Project
 
 Uses the schema: Dev + Staging + Production, where Production is the master
 
@@ -91,7 +96,7 @@ Production is created on Heroku
 
 
 
-# Git Remote to SSH
+## Git Remote to SSH
 ```bash
 ./git_remote_to_ssh {remote name} {username} {repo}
 ```
@@ -107,7 +112,7 @@ This means I don't have to keep entering the damn password to git push... :)
 
 
 
-# Add Path
+## Add Path
 ```bash
 ./add_path.sh 
 ```
@@ -115,28 +120,28 @@ This means I don't have to keep entering the damn password to git push... :)
 In case you need to add a global path to scripts
 
 
-# Deploy.sh
+## Deploy.sh
 
 TODO
 
 
-# local.sh
+## local.sh
 
 a place for local tidying before local deploy by localpy or localjs
 
 
-# localpy.sh and localjs.sh
+## localpy.sh and localjs.sh
 
 call local.sh and run relevant py or js development servers for the project
 
 
 
-# init_postgres
+## init_postgres
 
 TODO
 
 
-# dump_pdb.sh and restore_pdb.sh
+## dump_pdb.sh and restore_pdb.sh
 ```bash
 ./dump_pdb {file} 
 ```
@@ -153,7 +158,7 @@ uses pg_dump and pg_restore
 
 
 
-# Dump Heroku Postgres DB
+## Dump Heroku Postgres DB
 ```bash
 ./heroku_dump.sh
 ```
@@ -163,7 +168,7 @@ downloads a dump of the postgres db on heroku
 
 
 
-# .bashrc_custom
+## .bashrc_custom
 
 Gives the following commands:
 
@@ -206,7 +211,7 @@ Yes, I know. It's only for emergency use. Promise.
 
 
 
-# Example
+## Example
 
 My usual process is to setup up EC2 instance and sudo apt-get install git-core
 
