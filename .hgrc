@@ -1,0 +1,7 @@
+[alias]
+gl = log --graph -l 15 --style=$HOME/scripts/hg-glog-template.glog
+
+[extensions]
+rebase =
+
+

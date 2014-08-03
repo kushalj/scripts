@@ -17,8 +17,10 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 sudo apt-get install build-essential cmake python-dev
 
 # git and mercurial setup
-source ./setup-git.sh
-source ./setup-mercurial.sh
+echo './setup-ssh.sh "email@address.com"'
+echo './setup-git.sh "firstname lastname" "email@address.com"'
+echo './setup-hg.sh "firstname lastname" "email@address.com"'
+echo './setup-node.sh'
 
 
 
