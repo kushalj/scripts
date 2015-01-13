@@ -11,9 +11,12 @@ sudo apt-get install golang
 mkdir -p ~/go
 
 # setup vim
-sudo apt-get install vim-gtk
+sudo apt-get install vim-gnome
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# setup dev libs
 sudo apt-get install build-essential cmake python-dev
 
 # git and mercurial setup
