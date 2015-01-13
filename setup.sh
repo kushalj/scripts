@@ -22,6 +22,7 @@ echo './setup-git.sh "firstname lastname" "email@address.com"'
 echo './setup-hg.sh "firstname lastname" "email@address.com"'
 echo './setup-node.sh'
 
-
+# create a custom bash file for later additions
+touch ~/.bashrc_custom
 
 
